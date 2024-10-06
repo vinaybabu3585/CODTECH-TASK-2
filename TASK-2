@@ -1,0 +1,115 @@
+/*
+A temperature converter is a tool or program designed to convert a given temperature value from one scale to another. The three most commonly used temperature scales are:
+
+Celsius (°C): This scale is widely used around the world, especially in scientific contexts. Water freezes at 0°C and boils at 100°C at standard atmospheric pressure.
+
+Fahrenheit (°F): Primarily used in the United States, in this scale, water freezes at 32°F and boils at 212°F at standard atmospheric pressure.
+
+Kelvin (K): This is the standard unit of temperature in the International System of Units (SI) and is used in scientific contexts, especially in physics. The Kelvin scale starts at absolute zero (0 K), with water freezing at 273.15 K and boiling at 373.15 K.
+
+*/
+
+
+#include <stdio.h>
+
+// Function prototypes
+float celsiusToFahrenheit(float celsius);
+float fahrenheitToCelsius(float fahrenheit);
+float celsiusToKelvin(float celsius);
+float kelvinToCelsius(float kelvin);
+float fahrenheitToKelvin(float fahrenheit);
+float kelvinToFahrenheit(float kelvin);
+
+int main() 
+{
+    int choice_from, choice_to;
+    float temperature, converted_temp;
+
+    printf("Temperature Converter\n");
+    printf("1. Celsius\n");
+    printf("2. Fahrenheit\n");
+    printf("3. Kelvin\n");
+
+    // Get input scale
+    printf("Enter the number corresponding to the scale you're converting from (1, 2, or 3): ");
+    scanf("%d", &choice_from);
+
+    // Get the temperature value
+    printf("Enter the temperature: ");
+    scanf("%f", &temperature);
+
+    // Get output scale
+    printf("Enter the number corresponding to the scale you're converting to (1, 2, or 3): ");
+    scanf("%d", &choice_to);
+
+    // Conversion logic
+    if (choice_from == 1 && choice_to == 2)
+    {
+        converted_temp = celsiusToFahrenheit(temperature);
+    } 
+    else if (choice_from == 1 && choice_to == 3)
+    {
+        converted_temp = celsiusToKelvin(temperature);
+    } else if (choice_from == 2 && choice_to == 1)
+    {
+        converted_temp = fahrenheitToCelsius(temperature);
+    } 
+    else if (choice_from == 2 && choice_to == 3) 
+    {
+        converted_temp = fahrenheitToKelvin(temperature);
+    } 
+    else if (choice_from == 3 && choice_to == 1) 
+    {
+        converted_temp = kelvinToCelsius(temperature);
+    } 
+    else if (choice_from == 3 && choice_to == 2) 
+    {
+        converted_temp = kelvinToFahrenheit(temperature);
+    } 
+    else 
+    {
+        printf("Invalid conversion option!\n");
+        return 1;
+    }
+
+    // Display result
+    printf("Converted Temperature: %.2f\n", converted_temp);
+
+    return 0;
+}
+
+// Function to convert Celsius to Fahrenheit
+float celsiusToFahrenheit(float celsius) 
+{
+    return (celsius * 9.0 / 5.0) + 32;
+}
+
+// Function to convert Fahrenheit to Celsius
+float fahrenheitToCelsius(float fahrenheit) 
+{
+    return (fahrenheit - 32) * 5.0 / 9.0;
+}
+
+// Function to convert Celsius to Kelvin
+float celsiusToKelvin(float celsius) 
+{
+    return celsius + 273.15;
+}
+
+// Function to convert Kelvin to Celsius
+float kelvinToCelsius(float kelvin) 
+{
+    return kelvin - 273.15;
+}
+
+// Function to convert Fahrenheit to Kelvin
+float fahrenheitToKelvin(float fahrenheit) 
+{
+    return (fahrenheit - 32) * 5.0 / 9.0 + 273.15;
+}
+
+// Function to convert Kelvin to Fahrenheit
+float kelvinToFahrenheit(float kelvin) 
+{
+    return (kelvin - 273.15) * 9.0 / 5.0 + 32;
+}
