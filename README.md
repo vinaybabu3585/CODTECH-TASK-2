@@ -3,7 +3,7 @@
 ## Name:- Vinay babu
 
 ## Introduction:- 
-A simple program that converts temperatures between Celsius, Fahrenheit, and Kelvin. The user can input a temperature in one unit and receive the equivalent value in another unit.
+A simple program that converts temperatures between Celsius, Fahrenheit, and Kelvin. <br> The user can input a temperature in one unit and receive the equivalent value in another unit.
 
 ## Features:-
 
